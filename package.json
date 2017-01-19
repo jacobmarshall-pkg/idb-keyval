@@ -26,6 +26,9 @@
     "url": "https://github.com/jacobmarshall-pkg/kv/issues"
   },
   "homepage": "https://github.com/jacobmarshall-pkg/kv#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "uglify-js": "^2.7.0"
   }
