@@ -1,6 +1,6 @@
 # kv
 
-This is a fork of [`idk-kv`](https://github.com/jakearchibald/idb-keyval).
+This is a fork of [`idb-keyval`](https://github.com/jakearchibald/idb-keyval).
 
 A super simple key value store backed by IndexedDB.
 
