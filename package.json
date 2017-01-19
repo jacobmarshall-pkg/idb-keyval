@@ -1,6 +1,6 @@
 {
   "name": "@jacobmarshall/kv",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A super simple key value store backed by IndexedDB",
   "main": "kv.js",
   "typings": "typings.d.ts",
