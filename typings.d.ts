@@ -1,5 +1,5 @@
-declare module 'idb-keyval' {
-  interface IDBKeyVal<Key> {
+declare module 'kv' {
+  interface KV<Key> {
     /** Add a new value or update an existing one */
     set<Value>(key: Key, value: Value): PromiseLike<void>;
 
@@ -10,12 +10,12 @@ declare module 'idb-keyval' {
     keys(): PromiseLike<Key[]>;
 
     /** Delete an entry in the database by key */
-    delete(key: Key): PromiseLike<void>;
+    remove(key: Key): PromiseLike<void>;
 
     /** Delete all entries in the database */
     clear(): PromiseLike<void>;
   }
 
-  const idbKeyVal: IDBKeyVal<string>;
-  export = idbKeyVal;
+  const kv: KV<string>;
+  export = kv;
 }

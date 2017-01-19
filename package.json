@@ -1,15 +1,15 @@
 {
-  "name": "idb-keyval",
-  "version": "2.3.0",
-  "description": "A super-simple-small keyval store built on top of IndexedDB",
-  "main": "idb-keyval.js",
+  "name": "@jacobmarshall/kv",
+  "version": "0.0.0",
+  "description": "A super simple key value store backed by IndexedDB",
+  "main": "kv.js",
   "typings": "typings.d.ts",
   "scripts": {
-    "build": "uglifyjs idb-keyval.js --screw-ie8 -mc --output dist/idb-keyval-min.js"
+    "build": "uglifyjs kv.js --screw-ie8 -mc --output dist/kv.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jakearchibald/idb-keyval.git"
+    "url": "git+https://github.com/jacobmarshall-pkg/kv.git"
   },
   "keywords": [
     "idb",
@@ -20,12 +20,12 @@
     "storage",
     "promise"
   ],
-  "author": "Jake Archibald",
+  "author": "Jacob Marshall",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jakearchibald/idb-keyval/issues"
+    "url": "https://github.com/jacobmarshall-pkg/kv/issues"
   },
-  "homepage": "https://github.com/jakearchibald/idb-keyval#readme",
+  "homepage": "https://github.com/jacobmarshall-pkg/kv#readme",
   "devDependencies": {
     "uglify-js": "^2.7.0"
   }

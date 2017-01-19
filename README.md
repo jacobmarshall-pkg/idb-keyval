@@ -1,56 +1,55 @@
-# IDB-Keyval
+# kv
 
-This is a super-simple-small promise-based keyval store implemented with IndexedDB, largely based on [async-storage by Mozilla](https://github.com/mozilla-b2g/gaia/blob/master/shared/js/async_storage.js).
+This is a fork of [`idk-kv`](https://github.com/jakearchibald/idb-keyval).
 
-[localForage](https://github.com/localForage/localForage) offers similar functionality, but supports older browsers with broken/absent IDB implementations. Because of that, it's 6k, whereas idb-keyval is less than 500 bytes. Pick whichever works best for you!
+A super simple key value store backed by IndexedDB.
 
-This is only a keyval store. If you need to do more complex things like iteration & indexing, check out [IDB on NPM](https://www.npmjs.com/package/idb) (a little heavier at 1.7k). The first example in its README is how to recreate this library. 
+Since it is backed by IndexedDB, you can store anything structured-clonable (numbers, arrays, objects, dates, blobs etc - but beware of browser support).
+
+It's best used with a module loader (webpack, browserify, etc...) so that the global scope isn't poluted with `kv`.
 
 ## Usage
 
-### set:
+### kv.set(`string` key, `*` value) `Promise`
 
 ```js
-idbKeyval.set('hello', 'world');
-idbKeyval.set('foo', 'bar');
+await kv.set('hello', 'world');
+await kv.set('foo', 'bar');
 ```
 
-Since this is IDB-backed, you can store anything structured-clonable (numbers, arrays, objects, dates, blobs etc).
-
-All methods return promises:
-
 ```js
-idbKeyval.set('hello', 'world')
-  .then(() => console.log('It worked!'))
-  .catch(err => console.log('It failed!', err));
+try {
+  await kv.set('hello', 'world')
+  console.log('It worked!');
+} catch(err) {
+  console.log('It failed!', err);
+}
 ```
 
-### get:
+### kv.get(`string` key) `Promise<*>`
 
 ```js
-// logs: "world"
-idbKeyval.get('hello').then(val => console.log(val));
+console.log(await kv.get('hello'));
+// -> "world"
 ```
 
-If there is no 'hello' key, then `val` will be `undefined`.
-
-### keys:
+### kv.keys() `Promise<string>`
 
 ```js
-// logs: ["hello", "foo"]
-idbKeyval.keys().then(keys => console.log(keys));
+console.log(await kv.keys());
+// -> ["hello", "foo"]
 ```
 
-### delete:
+### kv.remove(`string` key) `Promise`
 
 ```js
-idbKeyval.delete('hello');
+await kv.remove('hello');
 ```
 
-### clear:
+### kv.clear() `Promise`
 
 ```js
-idbKeyval.clear();
+await kv.clear();
 ```
 
 That's it!
