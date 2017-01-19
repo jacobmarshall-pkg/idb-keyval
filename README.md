@@ -10,6 +10,17 @@ It's best used with a module loader (webpack, browserify, etc...) so that the gl
 
 ## Usage
 
+### kv(`string` name) `kv`
+
+Creates a custom kv store with a given name.
+
+```js
+const store = kv('sw-storage');
+await store.set('hello', 'world');
+console.log(await kv.get('hello'));
+// -> undefined
+```
+
 ### kv.set(`string` key, `*` value) `Promise`
 
 ```js
