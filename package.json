@@ -2,10 +2,10 @@
   "name": "@jacobmarshall/kv",
   "version": "0.1.0",
   "description": "A super simple key value store backed by IndexedDB",
-  "main": "kv.js",
+  "main": "lib/kv.js",
   "typings": "typings.d.ts",
   "scripts": {
-    "build": "uglifyjs kv.js --screw-ie8 -mc --output dist/kv.js"
+    "build": "uglifyjs kv.js --screw-ie8 -mc --output lib/kv.js"
   },
   "repository": {
     "type": "git",
